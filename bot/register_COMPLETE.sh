@@ -13,7 +13,19 @@ curl -s -X PUT \
   -d '[
   {"name":"ping","description":"Test de conectividad"},
   {"name":"ayuda","description":"Comandos disponibles"},
-  {"name":"bolsa","description":"Ver precios de acciones"},
+  {"name":"bolsa","description":"Sistema de Bolsa de Valores y Criptomonedas","options":[
+    {"name":"precios","description":"Ver precios actuales del mercado","type":1},
+    {"name":"comprar","description":"Comprar acciones o criptomonedas","type":1,"options":[
+      {"name":"symbol","description":"Simbolo de la accion - BTC ETH TSLA etc","type":3,"required":true},
+      {"name":"cantidad","description":"Numero de acciones a comprar","type":10,"required":true}
+    ]},
+    {"name":"vender","description":"Vender acciones o criptomonedas","type":1,"options":[
+      {"name":"symbol","description":"Simbolo de la accion - BTC ETH TSLA etc","type":3,"required":true},
+      {"name":"cantidad","description":"Numero de acciones a vender","type":10,"required":true}
+    ]},
+    {"name":"portafolio","description":"Ver tus inversiones actuales","type":1},
+    {"name":"historial","description":"Ver tus ultimas transacciones","type":1}
+  ]},
   {"name":"movimientos","description":"Ver historial de transacciones"},
   {"name":"impuestos","description":"Consulta estado fiscal"},
   {"name":"top-morosos","description":"Ranking de deuda"},
