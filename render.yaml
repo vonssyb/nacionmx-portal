@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     buildCommand: cd bot && npm install
-    startCommand: node bot/index.js
+    startCommand: cd bot && node index.js
     envVars:
       - key: NODE_ENV
         value: production
