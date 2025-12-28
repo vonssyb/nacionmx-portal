@@ -9,7 +9,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: DISCORD_TOKEN
-        value: MTQ1MDcwMTYxNzY4NTk5MTYyMQ.Gwwg5B.YM9kFRCu6c2iqxbKAc8lIZw0wxXeC6QlfeBSB0
+        value: MTQ1MDcwMTYxNzY4NTk5MTYyMQ.GucYMS.3RnMws3Z-BXFdTx5MQvkTvD7bpTzXbd6Kf0W9A
       - key: GUILD_ID
         value: "1398525215134318713"
       - key: NOTIFICATION_CHANNEL_ID
