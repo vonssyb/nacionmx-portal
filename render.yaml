@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nacionmx-bot
+    runtime: node
+    plan: free
+    buildCommand: cd bot && npm install
+    startCommand: node bot/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
