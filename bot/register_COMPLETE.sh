@@ -1,9 +1,20 @@
 #!/bin/bash
 
+# Source .env from parent directory if executing from root, or current if from bot dir
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs)
+elif [ -f ../.env ]; then
+  export $(grep -v '^#' ../.env | xargs)
+fi
+
 GUILD_ID="1398525215134318713"
 CLIENT_ID="1450701617685991621"
-TOKEN="MTQ1MDcwMTYxNzY4NTk5MTYyMQ.Gwwg5B.YM9kFRCu6c2iqxbKAc8lIZw0wxXeC6QlfeBSB0"
+TOKEN="${DISCORD_TOKEN_ECO}"
 
+if [ -z "$TOKEN" ]; then
+    echo "❌ Error: DISCORD_TOKEN_ECO not found in .env"
+    exit 1
+fi
 echo "🚀 Registrando TODOS los comandos (incluye /credito y /empresa)..."
 
 curl -s -X PUT \
